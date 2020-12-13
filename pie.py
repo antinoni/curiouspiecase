@@ -116,13 +116,13 @@ def folder():
 
 
 def hidden_object():
-    if suspects.culprit == suspects.name[0] or suspects.culprit == suspects.name[1]:
+    if suspects.culprit == suspects.names[0] or suspects.culprit == suspects.names[1]:
         couchgame = pygame.image.load(
             os.path.join(img_folder, "couchpink.png"))
-    elif suspects.culprit == suspects.name[2] or suspects.culprit == suspects.name[4]:
+    elif suspects.culprit == suspects.names[2] or suspects.culprit == suspects.names[4]:
         couchgame = pygame.image.load(
             os.path.join(img_folder, "couchblue.png"))
-    elif suspects.culprit == suspects.name[3] or suspects.culprit == suspects.name[5]:
+    elif suspects.culprit == suspects.names[3] or suspects.culprit == suspects.names[5]:
         couchgame = pygame.image.load(
             os.path.join(img_folder, "couchgreen.png"))
 
@@ -130,17 +130,17 @@ def hidden_object():
 
 
 def differences():
-    if suspects.culprit == suspects.name[0] or suspects.culprit == suspects.name[5]:
+    if suspects.culprit == suspects.names[0] or suspects.culprit == suspects.names[5]:
         game = pygame.image.load(
             os.path.join(img_folder, "white.png"))
-    elif suspects.culprit == suspects.name[3] or suspects.culprit == suspects.name[4]:
+    elif suspects.culprit == suspects.names[3] or suspects.culprit == suspects.names[4]:
         game = pygame.image.load(
             os.path.join(img_folder, "brown.png"))
-    elif suspects.culprit == suspects.name[2] or suspects.culprit == suspects.name[1]:
+    elif suspects.culprit == suspects.names[2] or suspects.culprit == suspects.names[1]:
         game = pygame.image.load(
             os.path.join(img_folder, "ginger.png"))
 
-    screen.blit(game, (100, 100))
+    screen.blit(game, (10, 10))
 
 ### RIDDLE ###
 
@@ -288,9 +288,11 @@ while running:
     elif player.rect.right < 700 and player.rect.right > 510 and player.rect.top < 200:
         text = 'I don\'t think I should leave an active crime scene.'
     elif player.rect.right > 700 and player.rect.top < 270:
-        text = 'I will call the family to give them the thief\s name when I am ready. Ready? [Hold Y]'
+        text = 'I will call the family to give them the thief\'s name when I am ready. Ready? [Hold Y]'
     elif player.rect.right < 300 and player.rect.right > 240 and player.rect.top < 200:
-        text = 'This is my case folder, containing all the suspects\s information.'
+        text = 'This is my case folder, containing all the suspects\' information.'
+    elif player.rect.bottom > 420 and player.rect.right > 655:
+        text = 'Hmmm... there are two pictures of the pie here.'
     elif player.rect.right < 420 and player.rect.right > 340 and player.rect.top < 200:
         text = 'An open book... A note written in it... And a stain from what looks like cherry jam.'
         if keystate[pygame.K_SPACE]:
@@ -312,7 +314,7 @@ while running:
     if player.rect.top > 205 and player.rect.right < 475:
         if keystate[pygame.K_SPACE] or keystate[pygame.K_h]:
             hidden_object()
-    if player.rect.top > 205 and player.rect.right < 475:
+    if player.rect.bottom > 420 and player.rect.right > 655:
         if keystate[pygame.K_SPACE] or keystate[pygame.K_h]:
             differences()
     elif player.rect.right < 420 and player.rect.right > 340 and player.rect.top < 200:
