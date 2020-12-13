@@ -128,6 +128,20 @@ def hidden_object():
 
     screen.blit(couchgame, (100, 100))
 
+
+def differences():
+    if suspects.culprit == suspects.name[0] or suspects.culprit == suspects.name[5]:
+        game = pygame.image.load(
+            os.path.join(img_folder, "white.png"))
+    elif suspects.culprit == suspects.name[3] or suspects.culprit == suspects.name[4]:
+        game = pygame.image.load(
+            os.path.join(img_folder, "brown.png"))
+    elif suspects.culprit == suspects.name[2] or suspects.culprit == suspects.name[1]:
+        game = pygame.image.load(
+            os.path.join(img_folder, "ginger.png"))
+
+    screen.blit(game, (100, 100))
+
 ### RIDDLE ###
 
 
@@ -298,6 +312,9 @@ while running:
     if player.rect.top > 205 and player.rect.right < 475:
         if keystate[pygame.K_SPACE] or keystate[pygame.K_h]:
             hidden_object()
+    if player.rect.top > 205 and player.rect.right < 475:
+        if keystate[pygame.K_SPACE] or keystate[pygame.K_h]:
+            differences()
     elif player.rect.right < 420 and player.rect.right > 340 and player.rect.top < 200:
         if keystate[pygame.K_SPACE] or keystate[pygame.K_h]:
             riddlegame()
