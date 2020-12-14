@@ -11,4 +11,4 @@ The main character is Detective Red. She is called on a case by the Jhonsons fam
 ## Preview
 ![Screenshot:](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/311/242/datas/original.png)
 
-# NOTE: To play the game make sure you're using python > 3.8 and pygame > 1.9.6
+### NOTE: To play the game make sure you're using python > 3.8 and pygame > 1.9.6
