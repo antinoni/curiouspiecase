@@ -282,7 +282,7 @@ while running:
     elif player.rect.top > 205 and player.rect.right < 475:
         text = 'The couch... I see some crumbs here.'
         if keystate[pygame.K_SPACE]:
-            text = 'I have to find:, but only one of them will help my cause.'
+            text = 'I see the thieft left something behind.'
         if keystate[pygame.K_h]:
             text = 'HINT: Which of these items has something in common with some of our suspects?'
     elif player.rect.right < 700 and player.rect.right > 510 and player.rect.top < 200:
@@ -292,7 +292,9 @@ while running:
     elif player.rect.right < 300 and player.rect.right > 240 and player.rect.top < 200:
         text = 'This is my case folder, containing all the suspects\' information.'
     elif player.rect.bottom > 420 and player.rect.right > 655:
-        text = 'Hmmm... there are two pictures of the pie here.'
+        text = 'Hmmm... there are two photographs of the pie here.'
+        if keystate[pygame.K_h]:
+            text = 'HINT: Do you notice any differences between the two photos?'
     elif player.rect.right < 420 and player.rect.right > 340 and player.rect.top < 200:
         text = 'An open book... A note written in it... And a stain from what looks like cherry jam.'
         if keystate[pygame.K_SPACE]:
