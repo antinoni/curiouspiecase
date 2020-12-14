@@ -1,6 +1,0 @@
-{
-    "editor.formatOnPaste": true,
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame"
-    ]
-}
